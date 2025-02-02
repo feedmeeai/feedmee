@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Hide scrollbar but keep functionality */
+.scrollbar-hide {
+  -ms-overflow-style: none;  
+  scrollbar-width: none;  
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;  
+}
+
+/* Allow body to scroll, but add minimal bounce/pull overscroll on mobile */
+html {
+  overscroll-behavior-y: none;
+  height: 100%;
+  overflow: hidden;
+}
+body {
+  @apply bg-gray-100;
+  height: 100%;
+  overflow-y: auto; 
+  -webkit-tap-highlight-color: transparent;
+  overscroll-behavior-y: none;
+}
+
+/* Category nav on mobile */
+@media (max-width: 768px) {
+  /* Add padding for bottom safe area */
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  
+  /* Ensure bottom sheet modal respects safe area */
+  .absolute.bottom-0 {
+    bottom: env(safe-area-inset-bottom, 0px);
+  }
+}
+
+/* Prevent text selection during drag */
+* {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Example wallet button adjustments (if needed) */
+.wallet-adapter-button {
+  @apply shadow-sm;
+  background: theme('colors.gray.100') !important;
+  color: theme('colors.gray.600') !important;
+}
+
+/* Category dropdown stacking fix */
+.relative {
+  z-index: 10;
+}
+.relative:hover,
+.relative:focus-within {
+  z-index: 50;
+}
+.z-\[9999\] {
+  z-index: 9999;
+}
+
+/* Remove default list markers so you can style them how you like. */
+ol.list-decimal > li:before,
+ul.list-disc > li:before {
+  display: none;
+}
+
+/* Ensure the modal is above everything else */
+.z-\[9999\] {
+  z-index: 9999;
+}
+
+/* Make sure the "mobile modal" or overlay can show above the bottom nav. */
+.fixed.inset-0 {
+  z-index: 9999;
+}
