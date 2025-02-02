@@ -1,5 +1,9 @@
 # FeedMee
 
+<p align="center">
+  <img src="frontend/public/feedmee.png" alt="FeedMee Logo" width="200"/>
+</p>
+
 FeedMee is a modern web application that helps you generate creative recipes based on the ingredients you have available. Built with React and Node.js, it features Solana wallet integration and AI-powered recipe generation.
 
 ## Features
